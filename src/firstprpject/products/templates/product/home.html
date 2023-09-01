@@ -1,0 +1,103 @@
+<html>
+<head>
+
+    <title>California Housing Prices</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>California Housing Prices</h1>
+
+    <form method="post" acition  = "/homepage">
+         {% csrf_token %}
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="longitude">Longitude</label>
+          <!--  scroll from -1240.35 to -114.31  -->
+          <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude" min="-1240.35" max="-114.31">
+          <p id="demo"> </p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="latitude">Latitude</label>
+          <!-- float from32.54 to 41.95  -->
+          <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="housing_median_age">Housing Median Age</label>
+          <!--scroll  1 to 52 -->
+          <input type="text" class="form-control" id="housing_median_age" name="housing_median_age" placeholder="Housing Median Age">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="total_rooms">Total Rooms</label>
+          <!-- from 2 - 39000  -->
+          <input type="text" class="form-control" id="total_rooms" name="total_rooms" placeholder="Total Rooms">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="total_bedrooms">Total Bedrooms</label>
+          <!-- 1 to 6445  -->
+          <input type="text" class="form-control" id="total_bedrooms" name="total_bedrooms" placeholder="Total Bedrooms">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="population">Population</label>
+          <!-- 3 to 35682 -->
+          <input type="text" class="form-control" id="population" name="population" placeholder="Population">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="households">Households</label>
+          <!-- 1 to 6082 -->
+          <input type="text" class="form-control" id="households" name="households" placeholder="Households">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="median_income">Median Income</label>
+          <!-- 0.4999 to 500001 -->
+          <input type="text" class="form-control" id="median_income" name="median_income" placeholder="Median Income">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="median_house_value">Median House Value</label>
+          <!--  -->
+          <input type="text" class="form-control" id="median_house_value" name="median_house_value" placeholder="Median House Value">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="ocean_proximity">Ocean Proximity</label>
+          <!-- sellect 5  -->
+          <input type="text" class="form-control" id="ocean_proximity" name="ocean_proximity" placeholder="Ocean Proximity">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary"  >Predict</button>
+
+        {% if pred %}
+            <div class="row justify-content-center text-center">
+                <div class="col-8">
+                    <div class="alert alert-primary" role="alert">
+                        {{pred}}
+                    </div>
+                </div>
+            </div>
+         {% endif %}
+    </form>
+  </div>
+</body>
+</html>

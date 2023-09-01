@@ -1,0 +1,6 @@
+Test.py
+setup.py
+asd.egg-info/PKG-INFO
+asd.egg-info/SOURCES.txt
+asd.egg-info/dependency_links.txt
+asd.egg-info/top_level.txt
